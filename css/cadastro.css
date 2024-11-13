@@ -1,0 +1,93 @@
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 10px;
+    display: flex;            /* Usando Flexbox */
+    justify-content: center;  /* Centraliza horizontalmente */
+    align-items: flex-start;  /* Centraliza verticalmente, mas com alinhamento ao topo */
+    height: 100vh;            /* Ocupa toda a altura da tela */
+    background-color: #000000; /* Cor de fundo */
+    position: relative;       /* Para posicionamento correto do conteúdo */
+}
+
+.form-container {
+    background-color: rgba(0, 0, 0, 0); /* Fundo branco com opacidade */
+    padding: 30px 20px; /* Aumentei o padding superior para criar espaço no topo */
+    border-radius: 20px; /* Bordas arredondadas */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    width: 100%;
+    max-width: 800px; /* Largura um pouco menor */
+    box-sizing: border-box;
+    z-index: 1; /* Garante que o formulário apareça acima da imagem de fundo */
+    margin:  20px; /* Adiciona margem lateral */
+    overflow: auto;  /* Permite rolagem caso o conteúdo ultrapasse a tela */
+    background-position: center; /* Centraliza a imagem */
+    position: absolute;       /* Para a imagem ficar no fundo */
+    top: 20px;
+    left: 0;
+    text-decoration: #51db10;
+    
+}
+
+h1{
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    text-align: center;
+}
+/* Estilo para o formulário */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 8px; /* Diminui ainda mais o espaço entre os campos */
+}
+
+/* Estilo para labels */
+label {
+    font-weight: bold;
+    margin-bottom: 3px; /* Menos espaço abaixo das labels */
+    font-size: 12px; /* Diminui o tamanho da fonte */
+}
+
+/* Estilo para inputs, selects e buttons */
+input, select, button {
+    padding: 6px 10px; /* Diminui o padding dos campos de entrada */
+    font-size: 13px; /* Diminui o tamanho da fonte nos inputs */
+    border: 1px solid #ffffff;
+    border-radius: 4px;
+    width: 100%; /* Faz com que todos os inputs e selects ocupem 100% da largura do formulário */
+    box-sizing: border-box; /* Garante que o padding e a borda não aumentem a largura total */
+}
+
+/* Estilo para os botões */
+button {
+    background-color: #0af6fa;
+    color: white;
+    border: none;
+    cursor: pointer;
+    padding: 8px; /* Diminui o padding do botão */
+    font-size: 13px; /* Diminui o tamanho da fonte do botão */
+    border-radius: 4px;
+    width: 100%; /* Botões também ocupam 100% da largura */
+}
+
+button:hover {
+    background-color: #45a049; /* Cor ao passar o mouse */
+}
+
+input[type="submit"]{
+    background-color: #0af6fa;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: #000000;
+}
+
+input[type="date"]{
+    color: rgba(240, 255, 255, 0.685);
+}
+/* Estilo para inputs tipo texto, senha, etc. */
+input[type="text"],input[type="submit"], input[type="password"], input[type="url"], input[type="date"], input[type="radio"], select {
+    width: 100%;
+    box-sizing: border-box;
+    font-size: 13px; /* Ajusta o tamanho da fonte nos inputs */
+}
+
+

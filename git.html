@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cursos</title>
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+    <link href="./output.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/cursos.css">
+    <link rel="stylesheet" href="https://unpkg.com/tailwindcss@2.2.19/dist/tailwind.min.css"/>
+</head>
+<body class="bg-black text-white font-sans">
+
+    <!-- Cabeçalho com título -->
+    <header class="text-center py-12">
+        <h1 class="text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-500">Cursos Online</h1>
+        <p class="text-lg text-gray-400">Explore nossos módulos de aprendizado interativos</p>
+    </header>
+
+    <!-- Contêiner dos cursos -->
+    <div class="page max-w-6xl mx-auto p-6">
+        <div class="uia-timeline" data-uia-timeline-skin="2" data-uia-card-skin="1">
+            <div class="uia-timeline__container">
+                <div class="flex justify-center"> <!-- Alinha os botões ao centro -->
+                    <!-- Grupo de botões -->
+                    <div class="uia-timeline__groups flex flex-col space-y-4 justify-center items-center w-full">
+                        <!-- Botões para os módulos -->
+                        <button class="uia-card__button bg-blue-600 text-white px-6 py-3 text-lg rounded-lg shadow-lg hover:bg-blue-700 transition-all duration-300 ease-in-out transform hover:scale-105 w-96 text-sm font-semibold flex items-center justify-between" onclick="openVideo('video/Git, GitHub e Metodologia Ágil 1 Introdução Geral .mp4')">
+                            Módulo 1
+                            <i class='bx bx-play text-lg'></i>
+                        </button>
+                        <button class="uia-card__button bg-blue-600 text-white px-6 py-3 text-lg rounded-lg shadow-lg hover:bg-blue-700 transition-all duration-300 ease-in-out transform hover:scale-105 w-96 text-sm font-semibold flex items-center justify-between" onclick="openVideo('video/Git, GitHub e Metodologia Ágil 2 Introdução aos Estados do Git.mp4')">
+                            Módulo 2
+                            <i class='bx bx-play text-lg'></i>
+                        </button>
+                        <button class="uia-card__button bg-blue-600 text-white px-6 py-3 text-lg rounded-lg shadow-lg hover:bg-blue-700 transition-all duration-300 ease-in-out transform hover:scale-105 w-96 text-sm font-semibold flex items-center justify-between" onclick="openVideo('video/Git, GitHub e Metodologia Ágil 3 Ciclo de Vida dos Estados.mp4')">
+                            Módulo 3
+                            <i class='bx bx-play text-lg'></i>
+                        </button>
+                        <button class="uia-card__button bg-blue-600 text-white px-6 py-3 text-lg rounded-lg shadow-lg hover:bg-blue-700 transition-all duration-300 ease-in-out transform hover:scale-105 w-96 text-sm font-semibold flex items-center justify-between" onclick="openVideo('video/Git, GitHub e Metodologia Ágil 4 Comandos e Ferramentas Auxiliares.mp4')">
+                            Módulo 4
+                            <i class='bx bx-play text-lg'></i>
+                        </button>
+                        <button class="uia-card__button bg-blue-600 text-white px-6 py-3 text-lg rounded-lg shadow-lg hover:bg-blue-700 transition-all duration-300 ease-in-out transform hover:scale-105 w-96 text-sm font-semibold flex items-center justify-between" onclick="openVideo('video/Git, GitHub e Metodologia Ágil 5 Branches e Conflitos.mp4')">
+                            Módulo 5
+                            <i class='bx bx-play text-lg'></i>
+                        </button>
+                        <button class="uia-card__button bg-blue-600 text-white px-6 py-3 text-lg rounded-lg shadow-lg hover:bg-blue-700 transition-all duration-300 ease-in-out transform hover:scale-105 w-96 text-sm font-semibold flex items-center justify-between" onclick="openVideo('video/Git, GitHub e Metodologia Ágil 6 GitHub, Repositório e Pull Request.mp4')">
+                            Módulo 6
+                            <i class='bx bx-play text-lg'></i>
+                        </button>
+                        <button class="uia-card__button bg-blue-600 text-white px-6 py-3 text-lg rounded-lg shadow-lg hover:bg-blue-700 transition-all duration-300 ease-in-out transform hover:scale-105 w-96 text-sm font-semibold flex items-center justify-between" onclick="openVideo('video/Git, GitHub e Metodologia Ágil 7 Manifesto para Desenvolvimento Ágil.mp4')">
+                            Módulo 7
+                            <i class='bx bx-play text-lg'></i>
+                        </button>
+                        <button class="uia-card__button bg-blue-600 text-white px-6 py-3 text-lg rounded-lg shadow-lg hover:bg-blue-700 transition-all duration-300 ease-in-out transform hover:scale-105 w-96 text-sm font-semibold flex items-center justify-between" onclick="openVideo('video/Git, GitHub e Metodologia Ágil 8 Pilar do Feedback.mp4')">
+                            Módulo 8
+                            <i class='bx bx-play text-lg'></i>
+                        </button>
+                        <button class="uia-card__button bg-blue-600 text-white px-6 py-3 text-lg rounded-lg shadow-lg hover:bg-blue-700 transition-all duration-300 ease-in-out transform hover:scale-105 w-96 text-sm font-semibold flex items-center justify-between" onclick="openVideo('video/Git, GitHub e Metodologia Ágil 9 Pilar das Contribuições Pequenas.mp4')">
+                            Módulo 9
+                            <i class='bx bx-play text-lg'></i>
+                        </button>
+                        <button class="uia-card__button bg-blue-600 text-white px-6 py-3 text-lg rounded-lg shadow-lg hover:bg-blue-700 transition-all duration-300 ease-in-out transform hover:scale-105 w-96 text-sm font-semibold flex items-center justify-between" onclick="openVideo('video/Git, GitHub e Metodologia Ágil 10 Pilar da Mutabilidade.mp4')">
+                            Módulo 10
+                            <i class='bx bx-play text-lg'></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal para exibir o vídeo -->
+    <div id="videoModal" class="fixed inset-0 bg-black bg-opacity-70 hidden flex items-center justify-center">
+        <div class="bg-white p-6 rounded-lg shadow-xl max-w-4xl w-full">
+            <button onclick="closeVideo()" class="text-red-500 mb-4 text-lg font-semibold">Fechar</button>
+            <video id="videoPlayer" class="w-full rounded-lg shadow-md" controls></video>
+        </div>
+    </div>
+
+    <script>
+        // Função para abrir o vídeo
+        function openVideo(videoSrc) {
+            const videoPlayer = document.getElementById('videoPlayer');
+            const videoModal = document.getElementById('videoModal');
+            videoPlayer.src = videoSrc;
+            videoModal.classList.remove('hidden');
+        }
+
+        // Função para fechar o modal
+        function closeVideo() {
+            const videoPlayer = document.getElementById('videoPlayer');
+            const videoModal = document.getElementById('videoModal');
+            videoPlayer.pause();
+            videoPlayer.src = "";
+            videoModal.classList.add('hidden');
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+.corrente {
+    margin: 0;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: #000;
+}
+
+canvas {
+    display: block;
+}
+body{
+    background-color: black;
+}
+
+#logo-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Ocupa a tela toda */
+    background-color: #f0f0f0;
+  }
+  
+  #logo {
+    width: 200px;
+    height: auto;
+  }
+  
