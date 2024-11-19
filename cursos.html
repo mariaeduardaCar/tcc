@@ -9,22 +9,17 @@
 </head>
 <body class="bg-black">
     <!-- Botão de logout minimalista com gradiente e texto oculto -->
-<button
-onclick="logout()"
-class="flex items-center space-x-2 px-2 py-2 bg-gradient-to-r from-blue-500 to-purple-500 hover:from-blue-600 hover:to-purple-600 text-white rounded-full transition duration-300">
-<!-- Ícone de seta (Logout) -->
-<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-5 h-5">
-    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
-</svg>
-<!-- Texto que aparece ao passar o mouse -->
-<span class="hidden md:inline-block text-sm ml-1 opacity-0 hover:opacity-100 transition-opacity duration-300">Sair</span>
-</button>
-
-<script>
-function logout() {
-    window.location.href = "/logout";
-}
-</script>
+    <button
+    onclick="window.location.href='logout.php'"
+    class="flex items-center space-x-2 px-2 py-2 bg-gradient-to-r from-blue-500 to-purple-500 hover:from-blue-600 hover:to-purple-600 text-white rounded-full transition duration-300">
+    <!-- Ícone de seta (Logout) -->
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-5 h-5">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+    </svg>
+    <!-- Texto que aparece ao passar o mouse -->
+    <span class="hidden md:inline-block text-sm ml-1 opacity-0 hover:opacity-100 transition-opacity duration-300">Sair</span>
+ </button>
+ 
 
     <div class="h-screen w-screen bg-black">
         <div class="mx-auto max-w-7xl pt-16 sm:pt-24">

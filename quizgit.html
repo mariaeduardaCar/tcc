@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz sobre GitHub</title>
+    <link rel="stylesheet" href="css/quizgit.css">
+</head>
+<body>
+
+<div class="quiz-container">
+    <img src="img/Imagem do WhatsApp de 2024-11-05 à(s) 20.10.40_39bb585d.jpg" alt="Logo" class="logo">
+    <h2>Quiz sobre GitHub</h2>
+
+    <form id="quizForm">
+        <div class="question">
+            <h3>1. O que é o GitHub?</h3>
+            <input type="radio" name="q1" value="a"> A) Um editor de texto<br>
+            <input type="radio" name="q1" value="b"> B) Uma plataforma de hospedagem de código<br>
+            <input type="radio" name="q1" value="c"> C) Um sistema operacional<br>
+        </div>
+
+        <div class="question">
+            <h3>2. O que é um repositório?</h3>
+            <input type="radio" name="q2" value="a"> A) Um arquivo de texto<br>
+            <input type="radio" name="q2" value="b"> B) Uma pasta onde o código é armazenado<br>
+            <input type="radio" name="q2" value="c"> C) Uma imagem do projeto<br>
+        </div>
+
+        <div class="question">
+            <h3>3. Qual comando é usado para clonar um repositório?</h3>
+            <input type="radio" name="q3" value="a"> A) git push<br>
+            <input type="radio" name="q3" value="b"> B) git clone<br>
+            <input type="radio" name="q3" value="c"> C) git commit<br>
+        </div>
+
+        <div class="question">
+            <h3>4. O que faz o comando "git commit"?</h3>
+            <input type="radio" name="q4" value="a"> A) Adiciona mudanças ao repositório<br>
+            <input type="radio" name="q4" value="b"> B) Salva mudanças no histórico<br>
+            <input type="radio" name="q4" value="c"> C) Exclui o repositório<br>
+        </div>
+
+        <div class="question">
+            <h3>5. Qual é o propósito do "pull request"?</h3>
+            <input type="radio" name="q5" value="a"> A) Solicitar mudanças em um projeto<br>
+            <input type="radio" name="q5" value="b"> B) Deletar o código do repositório<br>
+            <input type="radio" name="q5" value="c"> C) Fazer backup do repositório<br>
+        </div>
+
+        <div class="question">
+            <h3>6. O que faz o comando "git push"?</h3>
+            <input type="radio" name="q6" value="a"> A) Baixa mudanças do repositório remoto<br>
+            <input type="radio" name="q6" value="b"> B) Envia mudanças para o repositório remoto<br>
+            <input type="radio" name="q6" value="c"> C) Cria um novo branch<br>
+        </div>
+
+        <div class="question">
+            <h3>7. O que é um "fork"?</h3>
+            <input type="radio" name="q7" value="a"> A) Uma cópia de um repositório<br>
+            <input type="radio" name="q7" value="b"> B) Um comando para deletar código<br>
+            <input type="radio" name="q7" value="c"> C) Um arquivo de configuração<br>
+        </div>
+
+        <div class="question">
+            <h3>8. Qual arquivo é usado para ignorar arquivos no Git?</h3>
+            <input type="radio" name="q8" value="a"> A) .gitignore<br>
+            <input type="radio" name="q8" value="b"> B) README.md<br>
+            <input type="radio" name="q8" value="c"> C) config.txt<br>
+        </div>
+
+        <div class="question">
+            <h3>9. Qual comando cria um novo branch?</h3>
+            <input type="radio" name="q9" value="a"> A) git branch<br>
+            <input type="radio" name="q9" value="b"> B) git merge<br>
+            <input type="radio" name="q9" value="c"> C) git delete<br>
+        </div>
+
+        <div class="question">
+            <h3>10. O que faz o comando "git status"?</h3>
+            <input type="radio" name="q10" value="a"> A) Exibe o histórico de commits<br>
+            <input type="radio" name="q10" value="b"> B) Mostra o status das mudanças<br>
+            <input type="radio" name="q10" value="c"> C) Cria um repositório novo<br>
+        </div>
+
+        <button type="button" onclick="verificarRespostas()">Enviar</button>
+    </form>
+</div>
+
+<script>
+function verificarRespostas() {
+    const respostasCorretas = ['b', 'b', 'b', 'b', 'a', 'b', 'a', 'a', 'a', 'b'];
+    let pontuacao = 0;
+
+    for (let i = 0; i < respostasCorretas.length; i++) {
+        const resposta = document.querySelector(`input[name="q${i+1}"]:checked`);
+        if (resposta && resposta.value === respostasCorretas[i]) {
+            pontuacao++;
+        }
+    }
+
+    if (pontuacao >= 7) {
+        alert(`Você acertou ${pontuacao} de 10! Parabéns, você passou!`);
+        window.location.href = "certificadogit.php";
+    } else {
+        alert(`Você acertou apenas ${pontuacao} de 10. Tente novamente.`);
+        window.location.href = "quizgit.html";
+    }
+}
+</script>
+
+</body>
+</html>

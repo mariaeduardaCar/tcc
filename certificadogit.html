@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerar Certificado</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.2/html2pdf.bundle.js"></script>
+    <link href="https://unpkg.com/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet"/>
+</head>
+<body class="bg-black h-screen flex justify-center items-center m-0 p-0">
+    <div class="bg-white p-8 rounded-3xl shadow-xl w-full max-w-4xl mx-auto transition-opacity" id="form-container">
+        <h1 class="text-center text-3xl font-bold mb-6 text-gray-800">Gerar Certificado</h1>
+        <form id="certificadoForm">
+            <label for="nome" class="block text-sm font-medium mb-2 text-gray-700">Nome do Aluno:</label>
+            <input type="text" id="nome" placeholder="Digite o nome" class="w-full p-4 text-lg border border-gray-300 rounded-xl mb-5 focus:ring-2 focus:ring-blue-500 focus:outline-none" required>
+    
+            <label for="curso" class="block text-sm font-medium mb-2 text-gray-700">Curso:</label>
+            <input type="text" id="curso" placeholder="Digite o curso" class="w-full p-4 text-lg border border-gray-300 rounded-xl mb-5 focus:ring-2 focus:ring-blue-500 focus:outline-none" required>
+    
+            <label for="cargaHoraria" class="block text-sm font-medium mb-2 text-gray-700">Carga Horária:</label>
+            <input type="text" id="cargaHoraria" placeholder="Digite a carga horária" class="w-full p-4 text-lg border border-gray-300 rounded-xl mb-5 focus:ring-2 focus:ring-blue-500 focus:outline-none" required>
+    
+            <label for="dataConclusao" class="block text-sm font-medium mb-2 text-gray-700">Data de Conclusão:</label>
+            <input type="date" id="dataConclusao" class="w-full p-4 text-lg border border-gray-300 rounded-xl mb-6 focus:ring-2 focus:ring-blue-500 focus:outline-none" required>
+    
+            <button type="submit" class="w-full p-4 bg-gradient-to-r from-blue-500 to-purple-600 text-white rounded-xl hover:from-blue-600 hover:to-purple-700 focus:ring-2 focus:ring-blue-500 transition duration-300">Gerar Certificado</button>
+        </form>
+    </div>
+    
+
+    <div class="flex flex-col justify-center items-center h-screen">
+        <div class="certificate-container hidden bg-white p-10 rounded-3xl shadow-xl w-full max-w-5xl text-center" id="certificado">
+            <h1 class="text-4xl font-bold mb-6 text-serif" style="font-family: 'Times New Roman', serif;">Certificado de Conclusão</h1>
+            <p class="text-2xl mb-6 text-serif" style="font-family: 'Times New Roman', serif;">A Escola Tech Connect tem o prazer de certificar que</p>
+            <h2 id="certNome" class="text-3xl font-semibold mb-6 text-serif" style="font-family: 'Times New Roman', serif;"></h2>
+            <p class="text-2xl mb-6 text-serif" style="font-family: 'Times New Roman', serif;">concluiu com sucesso o curso de</p>
+            <h2 id="certCurso" class="text-3xl font-semibold mb-6 text-serif" style="font-family: 'Times New Roman', serif;"></h2>
+            <p class="text-2xl mb-6 text-serif" style="font-family: 'Times New Roman', serif;">com carga horária de <strong id="certCargaHoraria" class="text-xl font-medium"></strong>, concluido em</p>
+            <p><strong id="certDataConclusao" class="text-xl font-medium"></strong></p>
+            <p class="text-2xl mt-8 text-serif" style="font-family: 'Times New Roman', serif;">Parabéns pela sua conquista! A Tech Connect reconhece e valoriza seu esforço e dedicação.</p>
+        </div>
+    
+        <!-- Botão centralizado abaixo -->
+        <div class="w-full max-w-5xl flex justify-center mt-6">
+            <button id="baixarPDFButton" class="hidden w-full p-5 bg-gradient-to-r from-blue-500 to-purple-600 text-white rounded-full hover:from-blue-700 hover:to-purple-800 text-lg" onclick="baixarPDF()">Baixar PDF</button>
+        </div>
+    </div>
+    
+    
+    
+    <script>
+ 
+    document.getElementById("certificadoForm").addEventListener("submit", function(event) {
+        event.preventDefault();
+
+        // Pega os valores do formulário
+        const nome = document.getElementById("nome").value;
+        const curso = document.getElementById("curso").value;
+        const cargaHoraria = document.getElementById("cargaHoraria").value;
+        let dataConclusao = document.getElementById("dataConclusao").value;
+
+        // Formata a data para o formato BR (DD/MM/YYYY)
+        const dataObj = new Date(dataConclusao);
+        const dataFormatada = `${String(dataObj.getDate()).padStart(2, '0')}/${String(dataObj.getMonth() + 1).padStart(2, '0')}/${dataObj.getFullYear()}`;
+
+        // Exibe os dados no certificado
+        document.getElementById("certNome").innerText = nome;
+        document.getElementById("certCurso").innerText = curso;
+        document.getElementById("certCargaHoraria").innerText = cargaHoraria;
+        document.getElementById("certDataConclusao").innerText = dataFormatada;
+
+        // Esconde o formulário e mostra o certificado
+        document.getElementById('form-container').style.display = 'none';
+        document.getElementById("certificado").style.display = "block";
+        document.getElementById("baixarPDFButton").style.display = "block";
+    });
+
+
+        function baixarPDF() {
+            const elemento = document.getElementById("certificado");
+
+            html2pdf()
+                .from(elemento)
+                .set({
+                    margin: 10,
+                    filename: 'certificado.pdf',
+                    html2canvas: { scale: 2 },
+                    jsPDF: { orientation: 'landscape' }
+                })
+                .save();
+        }
+    </script>
+</body>
+</html>
