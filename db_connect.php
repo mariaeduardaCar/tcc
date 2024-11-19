@@ -1,5 +1,5 @@
 <?php
-$servername = "localhost";  // ou o endereço do seu servidor de banco de dados
+$servername = "mysql-db";  // ou o endereço do seu servidor de banco de dados
 $username = "root";         // seu usuário do banco de dados
 $password = "";             // sua senha do banco de dados
 $dbname = "tech_connect";   // nome do banco de dados

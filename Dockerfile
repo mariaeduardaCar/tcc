@@ -1,10 +1,25 @@
-FROM php:8.0-apache
+# Use uma imagem base para o PHP
+FROM php:7.4-apache
 
-# Instalar extensões MySQLi e PDO MySQL
-RUN docker-php-ext-install mysqli pdo_mysql
+# Instale as dependências do PHP
+RUN apt-get update && apt-get install -y \
+    libpng-dev \
+    libjpeg62-turbo-dev \
+    libfreetype6-dev \
+    && docker-php-ext-configure gd --with-freetype --with-jpeg \
+    && docker-php-ext-install gd mysqli
 
-# Copiar os arquivos do seu projeto para o diretório do Apache
-COPY . /var/www/html/
+# Instalar o MySQL (imagem oficial)
+FROM mysql:5.7
 
-# Expor a porta 80
-EXPOSE 80
+# Defina a senha de root, nome do banco, usuário e senha do banco
+ENV MYSQL_ROOT_PASSWORD=rootpassword
+ENV MYSQL_DATABASE=nome_do_banco
+ENV MYSQL_USER=usuario
+ENV MYSQL_PASSWORD=senha
+
+# Exponha as portas
+EXPOSE 3306
+
+# Volumes para persistência de dados
+VOLUME /var/lib/mysql
